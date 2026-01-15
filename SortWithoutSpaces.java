@@ -6,7 +6,6 @@ class SortWithoutSpaces{
         int min_index = -1;
         int min_value = Integer.MAX_VALUE;
         int s = list.size();
-
         for (int i = 0; i < s; i++) {
             int current = list.peek();
             list.poll();
@@ -44,22 +43,22 @@ class SortWithoutSpaces{
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Queue<Integer> list = new LinkedList<>();
+        try (Scanner sc = new Scanner(System.in)) {
+            Queue<Integer> list = new LinkedList<>();
 
-        System.out.print("Enter number of elements: ");
-        int n = sc.nextInt();
+            System.out.print("Enter number of elements: ");
+            int n = sc.nextInt();
 
-        System.out.println("Enter " + n + " elements:");
-        for (int i = 0; i < n; i++) {
-            list.add(sc.nextInt());
-        }
+            System.out.println("Enter " + n + " elements:");
+            for (int i = 0; i < n; i++) {
+                list.add(sc.nextInt());
+            }
 
-        sortQueue(list);
-
-        System.out.println("Sorted Queue:");
-        while (!list.isEmpty()) {
-            System.out.print(list.poll() + " ");
+            sortQueue(list);
+            System.out.println("Sorted Queue:");
+            while (!list.isEmpty()) {
+                System.out.print(list.poll() + " ");
+            }
         }
     }
 }
